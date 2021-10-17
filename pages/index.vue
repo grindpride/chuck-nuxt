@@ -5,8 +5,9 @@
         <form @submit.prevent="search">
           <input v-model="query" type="text">
           <button>Search</button>
-          <button @click="$fetch">Refresh</button>
+          <button @click="refresh">Refresh</button>
         </form>
+
       </div>
     </nav>
     <Card :joke="joke.value"></Card>
@@ -14,37 +15,15 @@
 
 </template>
 
-<!--<script>-->
-<!--export default {-->
-<!--  data() {-->
-<!--    return {-->
-<!--      joke: '',-->
-<!--      query: ''-->
-<!--    }-->
-<!--  },-->
-<!--  methods: {-->
-<!--    search() {-->
-<!--      this.$router.push(this.query)-->
-<!--    }-->
-<!--  },-->
-<!--  async fetch() {-->
-<!--    const resp = await fetch('https://api.chucknorris.io/jokes/random')-->
-<!--    const jokeInfo = await resp.json()-->
-<!--    this.joke = jokeInfo.value-->
-<!--  },-->
-<!--}-->
-<!--</script>-->
 
 <script setup>
 const router = useRouter();
-const {data: joke} = await useFetch('https://api.chucknorris.io/jokes/random')
+const {data: joke, refresh} = await useFetch('https://api.chucknorris.io/jokes/random')
 const query = ref('');
 
 const search = () => {
-  console.log('qweqwe');
   router.push(query.value)
 }
-
 </script>
 <style scoped>
 .container {
