@@ -88,3 +88,11 @@ sw.*
 
 # Vim swap files
 *.swp
+
+#firebase
+.firebase
+.firebaserc
+functions
+firebase.json
+predeploy-functions.bat
+predeploy-hosting.bat

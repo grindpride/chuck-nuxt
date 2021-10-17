@@ -1,13 +1,16 @@
 <template>
-  <div>
-    <h1>{{ joke }}</h1>
-    <button @click="$fetch">Refresh</button>
-    <div>
-      <form @submit.prevent="search">
-        <input v-model="query" type="text">
-        <button>Search</button>
-      </form>
-    </div>
+  <div class="container">
+    <nav class="nav">
+      <div>
+        <form @submit.prevent="search">
+          <input v-model="query" type="text">
+          <button>Search</button>
+          <button @click="$fetch">Refresh</button>
+        </form>
+      </div>
+    </nav>
+
+    <Card :joke="joke"></Card>
   </div>
 
 </template>
@@ -32,3 +35,15 @@ export default {
   },
 }
 </script>
+<style scoped>
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.nav{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+</style>
