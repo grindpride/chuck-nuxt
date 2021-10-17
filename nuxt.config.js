@@ -1,4 +1,6 @@
-module.exports = {
+import {defineNuxtConfig} from "@nuxt/bridge";
+
+export  default defineNuxtConfig( {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'chuck-nuxt',
@@ -20,4 +22,4 @@ module.exports = {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-}
+})
