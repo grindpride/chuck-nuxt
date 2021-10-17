@@ -1,4 +1,4 @@
-import {defineNuxtConfig} from "@nuxt/bridge";
+import {defineNuxtConfig} from "nuxt3";
 
 export  default defineNuxtConfig( {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -20,6 +20,6 @@ export  default defineNuxtConfig( {
 
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  // components: true,
 
 })
